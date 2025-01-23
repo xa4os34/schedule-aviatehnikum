@@ -9,17 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="Docnet.Core" Version="2.7.0-alpha.1" />
-    <PackageReference Include="Ghostscript.NET" Version="1.2.3.1" />
     <PackageReference Include="itext" Version="9.0.0" />
     <PackageReference Include="itext7" Version="9.0.0" />
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.0.0" />
     <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="Magick.NET.Core" Version="14.4.0" />
-    <PackageReference Include="Pdfium.Net.SDK" Version="4.95.2704" />
-    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
-    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.6" />
-    <PackageReference Include="SQLite" Version="3.13.0" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
     <PackageReference Include="Telegram.Bot" Version="22.3.0" />
   </ItemGroup>
