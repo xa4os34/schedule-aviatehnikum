@@ -6,7 +6,7 @@ using iText.Kernel.Pdf.Canvas.Parser.Data;
 
 class Raspisanie
 {
-    public static string NameGroup = "Название группы (именно так как указана в расписание если большими - то писать большими)";
+    public static string NameGroup = "РП-21-1";
     public readonly static List<string> DaysOfWeek = new List<string>
     {
         "ПОНЕДЕЛЬНИК",

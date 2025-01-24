@@ -1,4 +1,7 @@
 using System;
+using System.Configuration;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
@@ -11,10 +14,22 @@ using Telegram.Bot.Types.Enums;
 class TelegramBotRaspisanie
 {
     static ITelegramBotClient bot;
-    static string botToken = "YOUR_BOT_TOKEN";
+    static string botTokenPath = "PATH_TO_YOUR_JSONCONF";
 
     public static async Task Start()
     {
+        string jsonString = File.ReadAllText(botTokenPath);
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        };
+
+        var configuration = JsonSerializer.Deserialize<JsonObject>(jsonString, options);
+        if (configuration == null || !configuration.ContainsKey("Token"))
+        {
+            throw new Exception("Not found");
+        }
+        var botToken = configuration["Token"].ToString();
         bot = new TelegramBotClient(botToken);
         var me = await bot.GetMeAsync();
         Console.WriteLine($"Bot {me.Username} has started.");
